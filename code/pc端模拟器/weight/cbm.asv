@@ -1,0 +1,158 @@
+%% 设置文件地址
+% % shortcut不需要bias
+clear
+conv_weight_ddr = 'stage2_block1_conv2_weight.txt';
+bn_weight_ddr   = 'stage3_block1_bn1_weight.txt';
+bn_bias_ddr     = 'stage3_block1_bn1_bias.txt';
+bn_var_ddr      = 'stage3_block1_bn1_running_var.txt';
+bn_mean_ddr     = 'stage3_block1_bn1_running_mean.txt';
+output_w_ddr      = './conv_bn_merge_data/stage2_block1_conv2_weight.txt';
+output_b_ddr      = './conv_bn_merge_data/stage2_block1_conv2_weight.txt';
+%% 导入CONV_WEIGHT
+
+% 打开文件
+fileID = fopen(conv_weight_ddr, 'r');
+
+if fileID == -1
+    error('无法打开文件：%s', filepath);
+end
+
+% 跳过文件的第一行
+fgetl(fileID);  % 读取并丢弃第一行
+
+% 读取剩下的内容
+conv_weight = [];
+while ~feof(fileID)
+    line = fgetl(fileID);  % 读取一行
+    if ~isempty(line)
+        % 使用逗号分隔每行的数据，并将其转换为数字
+        nums = str2num(line);  % 将逗号分隔的字符串转换为数值数组
+        if ~isempty(nums)
+            conv_weight = [conv_weight; nums];  % 将当前行的数据添加到矩阵中
+        end
+    end
+end
+
+% 关闭文件
+fclose(fileID);
+%% 导入BN_WEIGHT
+% 打开文件
+fileID = fopen(bn_weight_ddr, 'r');
+
+if fileID == -1
+    error('无法打开文件：%s', filepath);
+end
+
+% 跳过文件的第一行
+fgetl(fileID);  % 读取并丢弃第一行
+
+% 读取剩下的内容
+bn_weight = [];
+while ~feof(fileID)
+    line = fgetl(fileID);  % 读取一行
+    if ~isempty(line)
+        % 使用逗号分隔每行的数据，并将其转换为数字
+        nums = str2num(line);  % 将逗号分隔的字符串转换为数值数组STR2DOUBLE
+        if ~isempty(nums)
+            bn_weight = [bn_weight; nums];  % 将当前行的数据添加到矩阵中
+        end
+    end
+end
+
+% 关闭文件
+fclose(fileID);
+%% 导入BN_BIAS
+% 打开文件
+fileID = fopen(bn_bias_ddr, 'r');
+
+if fileID == -1
+    error('无法打开文件：%s', filepath);
+end
+
+% 跳过文件的第一行
+fgetl(fileID);  % 读取并丢弃第一行
+
+% 读取剩下的内容
+bn_bias = [];
+while ~feof(fileID)
+    line = fgetl(fileID);  % 读取一行
+    if ~isempty(line)
+        % 使用逗号分隔每行的数据，并将其转换为数字
+        nums = str2num(line);  % 将逗号分隔的字符串转换为数值数组STR2DOUBLE
+        if ~isempty(nums)
+            bn_bias = [bn_bias; nums];  % 将当前行的数据添加到矩阵中
+        end
+    end
+end
+
+% 关闭文件
+fclose(fileID);
+%% 导入BN_MEAN
+% 打开文件
+fileID = fopen(bn_mean_ddr, 'r');
+
+if fileID == -1
+    error('无法打开文件：%s', filepath);
+end
+
+% 跳过文件的第一行
+fgetl(fileID);  % 读取并丢弃第一行
+
+% 读取剩下的内容
+bn_mean = [];
+while ~feof(fileID)
+    line = fgetl(fileID);  % 读取一行
+    if ~isempty(line)
+        % 使用逗号分隔每行的数据，并将其转换为数字
+        nums = str2num(line);  % 将逗号分隔的字符串转换为数值数组STR2DOUBLE
+        if ~isempty(nums)
+            bn_mean = [bn_mean; nums];  % 将当前行的数据添加到矩阵中
+        end
+    end
+end
+
+% 关闭文件
+fclose(fileID);
+%% 导入BN_VAR
+% 打开文件
+fileID = fopen(bn_var_ddr, 'r');
+
+if fileID == -1
+    error('无法打开文件：%s', filepath);
+end
+
+% 跳过文件的第一行
+fgetl(fileID);  % 读取并丢弃第一行
+
+% 读取剩下的内容
+bn_var = [];
+while ~feof(fileID)
+    line = fgetl(fileID);  % 读取一行
+    if ~isempty(line)
+        % 使用逗号分隔每行的数据，并将其转换为数字
+        nums = str2num(line);  % 将逗号分隔的字符串转换为数值数组STR2DOUBLE
+        if ~isempty(nums)
+            bn_var = [bn_var; nums];  % 将当前行的数据添加到矩阵中
+        end
+    end
+end
+
+% 关闭文件
+fclose(fileID);
+%% 计算卷积——BN融合
+out_channel = length(bn_mean);
+conv_num = length(conv_weight)/(out_channel);
+weight_merge = zeros(1,length(conv_weight));
+bias_merge = zeros(1,out_channel);
+for out_ch = 0:(out_channel-1)
+    weight_merge(1+out_ch*conv_num:(1+out_ch)*conv_num) = conv_weight(1+out_ch*conv_num:(1+out_ch)*conv_num)*(bn_weight(out_ch+1)/sqrt(bn_var(out_ch+1)^2+0.00001));
+    bias_merge(out_ch+1) = bn_bias(out_ch+1)-(bn_mean(out_ch+1)*bn_weight(out_ch+1))/sqrt(bn_var(out_ch+1)^2+0.00001);
+end
+
+fileID = fopen(output_ddr, 'w');
+fprintf(fileID, '%.8f,', weight_merge(1:end-1));  % 写前19个数并加逗号
+fprintf(fileID, '%.8f\n',weight_merge(end));     % 最后一个数后不加逗号
+fclose(fileID);
+
+
+

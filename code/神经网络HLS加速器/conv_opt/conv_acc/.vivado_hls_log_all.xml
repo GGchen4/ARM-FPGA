@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SCHED 204-69] Unable to schedule 'store' operation (conv_core.cpp:255) of variable 'p_Val2_3_0_6_2_3', conv_core.cpp:255 on array 'sum.V', conv_core.cpp:209 due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'sum_V'." projectName="conv_acc" solutionName="solution1" date="2026-01-16T11:35:00.118+0800" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('W_V_load_22', conv_core.cpp:253) on array 'W.V', conv_core.cpp:153 due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'W_V'." projectName="conv_acc" solutionName="solution1" date="2026-01-16T11:33:36.282+0800" type="Warning"/>
+        <logs message="WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)&#xD;&#xA;   between 'store' operation (conv_core.cpp:255) of variable 'p_Val2_3_0_0_0_3', conv_core.cpp:255 on array 'sum.V', conv_core.cpp:209 and 'load' operation ('sum_V_load', conv_core.cpp:255) on array 'sum.V', conv_core.cpp:209." projectName="conv_acc" solutionName="solution1" date="2026-01-16T11:33:32.169+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-542] Cannot flatten a loop nest 'LOOP_cout' (conv_core.cpp:207:5) in function 'Conv' : &#xD;&#xA;&#xD;&#xA;more than one sub loop." projectName="conv_acc" solutionName="solution1" date="2026-01-16T11:33:23.605+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 240 for loop 'LOOP_load3' (conv_core.cpp:295:1) in function 'Conv'." projectName="conv_acc" solutionName="solution1" date="2026-01-16T11:32:18.494+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 144 for loop 'LOOP_load2' (conv_core.cpp:160:1) in function 'Conv'." projectName="conv_acc" solutionName="solution1" date="2026-01-16T11:32:18.482+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 384 for loop 'LOOP_load1' (conv_core.cpp:145:1) in function 'Conv'." projectName="conv_acc" solutionName="solution1" date="2026-01-16T11:32:18.444+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

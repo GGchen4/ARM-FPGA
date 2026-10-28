@@ -1,0 +1,298 @@
+
+
+================================================================
+== Vivado HLS Report for 'init_out_with_bias'
+================================================================
+* Date:           Tue Jan 20 21:01:43 2026
+
+* Version:        2017.4 (Build 2086221 on Fri Dec 15 21:13:33 MST 2017)
+* Project:        conv
+* Solution:       16X36X60_TO_16X36X60
+* Product family: zynq
+* Target device:  xc7z035ffg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.75|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  2170|  2170|  2170|  2170|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |          |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  2168|  2168|        10|          1|          1|  2160|    yes   |
+        +----------+------+------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       0|     231|
+|FIFO             |        -|      -|       -|       -|
+|Instance         |        -|      -|       -|       -|
+|Memory           |        -|      -|       -|       -|
+|Multiplexer      |        -|      -|       -|     129|
+|Register         |        0|      -|     337|     128|
++-----------------+---------+-------+--------+--------+
+|Total            |        0|      0|     337|     488|
++-----------------+---------+-------+--------+--------+
+|Available        |     1000|    900|  343800|  171900|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |        0|      0|   ~0   |   ~0   |
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name           | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |i_3_fu_447_p2                      |     +    |      0|  0|  13|           1|           4|
+    |indvar_flatten_next5_fu_391_p2     |     +    |      0|  0|  19|          12|           1|
+    |indvar_flatten_op_fu_481_p2        |     +    |      0|  0|  15|           8|           1|
+    |j_3_fu_475_p2                      |     +    |      0|  0|  13|           4|           1|
+    |mm_3_fu_397_p2                     |     +    |      0|  0|  15|           1|           5|
+    |tmp_32_fu_528_p2                   |     +    |      0|  0|   9|           9|           9|
+    |tmp_s_fu_519_p2                    |     -    |      0|  0|   9|           9|           9|
+    |ap_block_pp0_stage0_01001          |    and   |      0|  0|   8|           1|           1|
+    |ap_block_state10_pp0_stage0_iter8  |    and   |      0|  0|   8|           1|           1|
+    |ap_block_state3_io                 |    and   |      0|  0|   8|           1|           1|
+    |ap_condition_584                   |    and   |      0|  0|   8|           1|           1|
+    |exitcond_mid_fu_441_p2             |    and   |      0|  0|   8|           1|           1|
+    |exitcond_flatten5_fu_385_p2        |   icmp   |      0|  0|  13|          12|          12|
+    |exitcond_flatten_fu_403_p2         |   icmp   |      0|  0|  11|           8|           8|
+    |exitcond_fu_435_p2                 |   icmp   |      0|  0|   9|           4|           2|
+    |ap_block_pp0_stage0_11001          |    or    |      0|  0|   8|           1|           1|
+    |tmp_fu_453_p2                      |    or    |      0|  0|   8|           1|           1|
+    |i_mid_fu_409_p3                    |  select  |      0|  0|   4|           1|           1|
+    |indvar_flatten_next_fu_487_p3      |  select  |      0|  0|   8|           1|           1|
+    |j_mid2_fu_459_p3                   |  select  |      0|  0|   4|           1|           1|
+    |tmp_20_mid2_fu_467_p3              |  select  |      0|  0|   4|           1|           4|
+    |tmp_mid2_v_fu_417_p3               |  select  |      0|  0|   5|           1|           5|
+    |ap_enable_pp0                      |    xor   |      0|  0|   8|           1|           2|
+    |ap_enable_reg_pp0_iter1            |    xor   |      0|  0|   8|           2|           1|
+    |not_exitcond_flatten_fu_429_p2     |    xor   |      0|  0|   8|           1|           2|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                              |          |      0|  0| 231|          84|          76|
+    +-----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------------------+----+-----------+-----+-----------+
+    |                 Name                | LUT| Input Size| Bits| Total Bits|
+    +-------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                            |  21|          4|    1|          4|
+    |ap_enable_reg_pp0_iter1              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter9              |   9|          2|    1|          2|
+    |ap_phi_mux_i_phi_fu_367_p4           |   9|          2|    4|          8|
+    |ap_phi_mux_mm_phi_fu_345_p4          |   9|          2|    5|         10|
+    |ap_sig_ioackin_m_axi_bias_V_ARREADY  |   9|          2|    1|          2|
+    |bias_V_blk_n_AR                      |   9|          2|    1|          2|
+    |bias_V_blk_n_R                       |   9|          2|    1|          2|
+    |i_reg_363                            |   9|          2|    4|          8|
+    |indvar_flatten5_reg_330              |   9|          2|   12|         24|
+    |indvar_flatten_reg_352               |   9|          2|    8|         16|
+    |j_reg_374                            |   9|          2|    4|          8|
+    |mm_reg_341                           |   9|          2|    5|         10|
+    +-------------------------------------+----+-----------+-----+-----------+
+    |Total                                | 129|         28|   48|         98|
+    +-------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------+----+----+-----+-----------+
+    |                 Name                | FF | LUT| Bits| Const Bits|
+    +-------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                            |   3|   0|    3|          0|
+    |ap_enable_reg_pp0_iter0              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter5              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter6              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter7              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter8              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter9              |   1|   0|    1|          0|
+    |ap_reg_ioackin_m_axi_bias_V_ARREADY  |   1|   0|    1|          0|
+    |exitcond_flatten5_reg_581            |   1|   0|    1|          0|
+    |i_reg_363                            |   4|   0|    4|          0|
+    |indvar_flatten5_reg_330              |  12|   0|   12|          0|
+    |indvar_flatten_reg_352               |   8|   0|    8|          0|
+    |j_mid2_reg_600                       |   4|   0|    4|          0|
+    |j_reg_374                            |   4|   0|    4|          0|
+    |mm_reg_341                           |   5|   0|    5|          0|
+    |p_Val2_s_reg_628                     |  16|   0|   16|          0|
+    |tmp_20_mid2_reg_605                  |   4|   0|    4|          0|
+    |tmp_64_reg_596                       |   4|   0|    4|          0|
+    |tmp_mid2_v_reg_590                   |   5|   0|    5|          0|
+    |exitcond_flatten5_reg_581            |  64|  32|    1|          0|
+    |j_mid2_reg_600                       |  64|  32|    4|          0|
+    |tmp_20_mid2_reg_605                  |  64|  32|    4|          0|
+    |tmp_64_reg_596                       |  64|  32|    4|          0|
+    +-------------------------------------+----+----+-----+-----------+
+    |Total                                | 337| 128|   94|          0|
+    +-------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+--------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |    Source Object   |    C Type    |
++-----------------------+-----+-----+------------+--------------------+--------------+
+|ap_clk                 |  in |    1| ap_ctrl_hs | init_out_with_bias | return value |
+|ap_rst                 |  in |    1| ap_ctrl_hs | init_out_with_bias | return value |
+|ap_start               |  in |    1| ap_ctrl_hs | init_out_with_bias | return value |
+|ap_done                | out |    1| ap_ctrl_hs | init_out_with_bias | return value |
+|ap_idle                | out |    1| ap_ctrl_hs | init_out_with_bias | return value |
+|ap_ready               | out |    1| ap_ctrl_hs | init_out_with_bias | return value |
+|out_buf_0_V_address0   | out |    8|  ap_memory |     out_buf_0_V    |     array    |
+|out_buf_0_V_ce0        | out |    1|  ap_memory |     out_buf_0_V    |     array    |
+|out_buf_0_V_we0        | out |    1|  ap_memory |     out_buf_0_V    |     array    |
+|out_buf_0_V_d0         | out |   40|  ap_memory |     out_buf_0_V    |     array    |
+|out_buf_1_V_address0   | out |    8|  ap_memory |     out_buf_1_V    |     array    |
+|out_buf_1_V_ce0        | out |    1|  ap_memory |     out_buf_1_V    |     array    |
+|out_buf_1_V_we0        | out |    1|  ap_memory |     out_buf_1_V    |     array    |
+|out_buf_1_V_d0         | out |   40|  ap_memory |     out_buf_1_V    |     array    |
+|out_buf_2_V_address0   | out |    8|  ap_memory |     out_buf_2_V    |     array    |
+|out_buf_2_V_ce0        | out |    1|  ap_memory |     out_buf_2_V    |     array    |
+|out_buf_2_V_we0        | out |    1|  ap_memory |     out_buf_2_V    |     array    |
+|out_buf_2_V_d0         | out |   40|  ap_memory |     out_buf_2_V    |     array    |
+|out_buf_3_V_address0   | out |    8|  ap_memory |     out_buf_3_V    |     array    |
+|out_buf_3_V_ce0        | out |    1|  ap_memory |     out_buf_3_V    |     array    |
+|out_buf_3_V_we0        | out |    1|  ap_memory |     out_buf_3_V    |     array    |
+|out_buf_3_V_d0         | out |   40|  ap_memory |     out_buf_3_V    |     array    |
+|out_buf_4_V_address0   | out |    8|  ap_memory |     out_buf_4_V    |     array    |
+|out_buf_4_V_ce0        | out |    1|  ap_memory |     out_buf_4_V    |     array    |
+|out_buf_4_V_we0        | out |    1|  ap_memory |     out_buf_4_V    |     array    |
+|out_buf_4_V_d0         | out |   40|  ap_memory |     out_buf_4_V    |     array    |
+|out_buf_5_V_address0   | out |    8|  ap_memory |     out_buf_5_V    |     array    |
+|out_buf_5_V_ce0        | out |    1|  ap_memory |     out_buf_5_V    |     array    |
+|out_buf_5_V_we0        | out |    1|  ap_memory |     out_buf_5_V    |     array    |
+|out_buf_5_V_d0         | out |   40|  ap_memory |     out_buf_5_V    |     array    |
+|out_buf_6_V_address0   | out |    8|  ap_memory |     out_buf_6_V    |     array    |
+|out_buf_6_V_ce0        | out |    1|  ap_memory |     out_buf_6_V    |     array    |
+|out_buf_6_V_we0        | out |    1|  ap_memory |     out_buf_6_V    |     array    |
+|out_buf_6_V_d0         | out |   40|  ap_memory |     out_buf_6_V    |     array    |
+|out_buf_7_V_address0   | out |    8|  ap_memory |     out_buf_7_V    |     array    |
+|out_buf_7_V_ce0        | out |    1|  ap_memory |     out_buf_7_V    |     array    |
+|out_buf_7_V_we0        | out |    1|  ap_memory |     out_buf_7_V    |     array    |
+|out_buf_7_V_d0         | out |   40|  ap_memory |     out_buf_7_V    |     array    |
+|out_buf_8_V_address0   | out |    8|  ap_memory |     out_buf_8_V    |     array    |
+|out_buf_8_V_ce0        | out |    1|  ap_memory |     out_buf_8_V    |     array    |
+|out_buf_8_V_we0        | out |    1|  ap_memory |     out_buf_8_V    |     array    |
+|out_buf_8_V_d0         | out |   40|  ap_memory |     out_buf_8_V    |     array    |
+|out_buf_9_V_address0   | out |    8|  ap_memory |     out_buf_9_V    |     array    |
+|out_buf_9_V_ce0        | out |    1|  ap_memory |     out_buf_9_V    |     array    |
+|out_buf_9_V_we0        | out |    1|  ap_memory |     out_buf_9_V    |     array    |
+|out_buf_9_V_d0         | out |   40|  ap_memory |     out_buf_9_V    |     array    |
+|out_buf_10_V_address0  | out |    8|  ap_memory |    out_buf_10_V    |     array    |
+|out_buf_10_V_ce0       | out |    1|  ap_memory |    out_buf_10_V    |     array    |
+|out_buf_10_V_we0       | out |    1|  ap_memory |    out_buf_10_V    |     array    |
+|out_buf_10_V_d0        | out |   40|  ap_memory |    out_buf_10_V    |     array    |
+|out_buf_11_V_address0  | out |    8|  ap_memory |    out_buf_11_V    |     array    |
+|out_buf_11_V_ce0       | out |    1|  ap_memory |    out_buf_11_V    |     array    |
+|out_buf_11_V_we0       | out |    1|  ap_memory |    out_buf_11_V    |     array    |
+|out_buf_11_V_d0        | out |   40|  ap_memory |    out_buf_11_V    |     array    |
+|out_buf_12_V_address0  | out |    8|  ap_memory |    out_buf_12_V    |     array    |
+|out_buf_12_V_ce0       | out |    1|  ap_memory |    out_buf_12_V    |     array    |
+|out_buf_12_V_we0       | out |    1|  ap_memory |    out_buf_12_V    |     array    |
+|out_buf_12_V_d0        | out |   40|  ap_memory |    out_buf_12_V    |     array    |
+|out_buf_13_V_address0  | out |    8|  ap_memory |    out_buf_13_V    |     array    |
+|out_buf_13_V_ce0       | out |    1|  ap_memory |    out_buf_13_V    |     array    |
+|out_buf_13_V_we0       | out |    1|  ap_memory |    out_buf_13_V    |     array    |
+|out_buf_13_V_d0        | out |   40|  ap_memory |    out_buf_13_V    |     array    |
+|out_buf_14_V_address0  | out |    8|  ap_memory |    out_buf_14_V    |     array    |
+|out_buf_14_V_ce0       | out |    1|  ap_memory |    out_buf_14_V    |     array    |
+|out_buf_14_V_we0       | out |    1|  ap_memory |    out_buf_14_V    |     array    |
+|out_buf_14_V_d0        | out |   40|  ap_memory |    out_buf_14_V    |     array    |
+|out_buf_15_V_address0  | out |    8|  ap_memory |    out_buf_15_V    |     array    |
+|out_buf_15_V_ce0       | out |    1|  ap_memory |    out_buf_15_V    |     array    |
+|out_buf_15_V_we0       | out |    1|  ap_memory |    out_buf_15_V    |     array    |
+|out_buf_15_V_d0        | out |   40|  ap_memory |    out_buf_15_V    |     array    |
+|m_axi_bias_V_AWVALID   | out |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_AWREADY   |  in |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_AWADDR    | out |   32|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_AWID      | out |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_AWLEN     | out |   32|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_AWSIZE    | out |    3|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_AWBURST   | out |    2|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_AWLOCK    | out |    2|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_AWCACHE   | out |    4|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_AWPROT    | out |    3|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_AWQOS     | out |    4|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_AWREGION  | out |    4|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_AWUSER    | out |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_WVALID    | out |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_WREADY    |  in |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_WDATA     | out |   16|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_WSTRB     | out |    2|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_WLAST     | out |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_WID       | out |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_WUSER     | out |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_ARVALID   | out |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_ARREADY   |  in |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_ARADDR    | out |   32|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_ARID      | out |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_ARLEN     | out |   32|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_ARSIZE    | out |    3|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_ARBURST   | out |    2|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_ARLOCK    | out |    2|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_ARCACHE   | out |    4|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_ARPROT    | out |    3|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_ARQOS     | out |    4|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_ARREGION  | out |    4|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_ARUSER    | out |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_RVALID    |  in |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_RREADY    | out |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_RDATA     |  in |   16|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_RLAST     |  in |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_RID       |  in |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_RUSER     |  in |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_RRESP     |  in |    2|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_BVALID    |  in |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_BREADY    | out |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_BRESP     |  in |    2|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_BID       |  in |    1|    m_axi   |       bias_V       |    pointer   |
+|m_axi_bias_V_BUSER     |  in |    1|    m_axi   |       bias_V       |    pointer   |
++-----------------------+-----+-----+------------+--------------------+--------------+
+

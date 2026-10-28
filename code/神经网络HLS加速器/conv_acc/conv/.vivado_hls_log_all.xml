@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'conv9x15x64_9x15x64/OUT' to 'conv9x15x64_9x15x64/OUT_r' to avoid the conflict with HDL keywords or other object names." projectName="conv" solutionName="64X9X15_TO_64X9X15" date="2026-01-20T23:36:30.084+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'conv9x15x64_9x15x64/IN' to 'conv9x15x64_9x15x64/IN_r' to avoid the conflict with HDL keywords or other object names." projectName="conv" solutionName="64X9X15_TO_64X9X15" date="2026-01-20T23:36:30.072+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop upper bound from 152471338866 to 2130 for loop 'Loop-0' in function 'store_output_tile_pa'." projectName="conv" solutionName="64X9X15_TO_64X9X15" date="2026-01-20T23:36:30.004+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'store_output_tile_pack4' to 'store_output_tile_pa' (conv_core.cpp:50:33)" projectName="conv" solutionName="64X9X15_TO_64X9X15" date="2026-01-20T23:36:26.100+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'out.V' (conv_core.cpp:577:1) to m_axi port 'OUT' since its offset mode is off." projectName="conv" solutionName="64X9X15_TO_64X9X15" date="2026-01-20T23:36:25.428+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'bias.V' (conv_core.cpp:576:1) to m_axi port 'W' since its offset mode is off." projectName="conv" solutionName="64X9X15_TO_64X9X15" date="2026-01-20T23:36:23.432+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'w.V' (conv_core.cpp:574:1) to m_axi port 'W' since its offset mode is off." projectName="conv" solutionName="64X9X15_TO_64X9X15" date="2026-01-20T23:36:23.419+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'in.V' (conv_core.cpp:573:1) to m_axi port 'IN' since its offset mode is off." projectName="conv" solutionName="64X9X15_TO_64X9X15" date="2026-01-20T23:36:23.409+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] conv_core.cpp:276: variable-indexed range selection may cause suboptimal QoR." projectName="conv" solutionName="64X9X15_TO_64X9X15" date="2026-01-20T23:36:08.882+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'conv18x30x32_9x15x64/OUT' to 'conv18x30x32_9x15x64/OUT_r' to avoid the conflict with HDL keywords or other object names." projectName="conv" solutionName="32X18X30_TO_64X9X15" date="2026-01-20T23:34:10.357+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'conv18x30x32_9x15x64/IN' to 'conv18x30x32_9x15x64/IN_r' to avoid the conflict with HDL keywords or other object names." projectName="conv" solutionName="32X18X30_TO_64X9X15" date="2026-01-20T23:34:10.347+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop upper bound from 152471338866 to 2130 for loop 'Loop-0' in function 'store_output_tile_pa'." projectName="conv" solutionName="32X18X30_TO_64X9X15" date="2026-01-20T23:34:10.280+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'store_output_tile_pack4' to 'store_output_tile_pa' (conv_core.cpp:50:33)" projectName="conv" solutionName="32X18X30_TO_64X9X15" date="2026-01-20T23:34:06.320+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'out.V' (conv_core.cpp:554:1) to m_axi port 'OUT' since its offset mode is off." projectName="conv" solutionName="32X18X30_TO_64X9X15" date="2026-01-20T23:34:05.637+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'bias.V' (conv_core.cpp:553:1) to m_axi port 'W' since its offset mode is off." projectName="conv" solutionName="32X18X30_TO_64X9X15" date="2026-01-20T23:34:03.623+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'w.V' (conv_core.cpp:551:1) to m_axi port 'W' since its offset mode is off." projectName="conv" solutionName="32X18X30_TO_64X9X15" date="2026-01-20T23:34:03.614+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'in.V' (conv_core.cpp:550:1) to m_axi port 'IN' since its offset mode is off." projectName="conv" solutionName="32X18X30_TO_64X9X15" date="2026-01-20T23:34:03.605+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] conv_core.cpp:276: variable-indexed range selection may cause suboptimal QoR." projectName="conv" solutionName="32X18X30_TO_64X9X15" date="2026-01-20T23:33:48.920+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'conv36x60x16_18x30x32/OUT' to 'conv36x60x16_18x30x32/OUT_r' to avoid the conflict with HDL keywords or other object names." projectName="conv" solutionName="16X36X60_TO_32X18X30" date="2026-01-20T23:25:53.373+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'conv36x60x16_18x30x32/IN' to 'conv36x60x16_18x30x32/IN_r' to avoid the conflict with HDL keywords or other object names." projectName="conv" solutionName="16X36X60_TO_32X18X30" date="2026-01-20T23:25:53.361+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop upper bound from 4261681295487 to 59535 for loop 'Loop-0' in function 'store_output_tile_pa'." projectName="conv" solutionName="16X36X60_TO_32X18X30" date="2026-01-20T23:25:53.300+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'store_output_tile_pack4' to 'store_output_tile_pa' (conv_core.cpp:50:33)" projectName="conv" solutionName="16X36X60_TO_32X18X30" date="2026-01-20T23:25:49.341+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'out.V' (conv_core.cpp:508:1) to m_axi port 'OUT' since its offset mode is off." projectName="conv" solutionName="16X36X60_TO_32X18X30" date="2026-01-20T23:25:48.678+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'bias.V' (conv_core.cpp:507:1) to m_axi port 'W' since its offset mode is off." projectName="conv" solutionName="16X36X60_TO_32X18X30" date="2026-01-20T23:25:46.677+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'w.V' (conv_core.cpp:505:1) to m_axi port 'W' since its offset mode is off." projectName="conv" solutionName="16X36X60_TO_32X18X30" date="2026-01-20T23:25:46.667+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'in.V' (conv_core.cpp:504:1) to m_axi port 'IN' since its offset mode is off." projectName="conv" solutionName="16X36X60_TO_32X18X30" date="2026-01-20T23:25:46.656+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] conv_core.cpp:276: variable-indexed range selection may cause suboptimal QoR." projectName="conv" solutionName="16X36X60_TO_32X18X30" date="2026-01-20T23:25:32.084+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'conv18x30x32_18x30x32/OUT' to 'conv18x30x32_18x30x32/OUT_r' to avoid the conflict with HDL keywords or other object names." projectName="conv" solutionName="32X18X30_TO_32X18X30" date="2026-01-20T23:24:00.318+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'conv18x30x32_18x30x32/IN' to 'conv18x30x32_18x30x32/IN_r' to avoid the conflict with HDL keywords or other object names." projectName="conv" solutionName="32X18X30_TO_32X18X30" date="2026-01-20T23:24:00.307+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-561] Updating loop upper bound from 4261681295487 to 59535 for loop 'Loop-0' in function 'store_output_tile_pa'." projectName="conv" solutionName="32X18X30_TO_32X18X30" date="2026-01-20T23:24:00.248+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'store_output_tile_pack4' to 'store_output_tile_pa' (conv_core.cpp:50:33)" projectName="conv" solutionName="32X18X30_TO_32X18X30" date="2026-01-20T23:23:56.307+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'out.V' (conv_core.cpp:531:1) to m_axi port 'OUT' since its offset mode is off." projectName="conv" solutionName="32X18X30_TO_32X18X30" date="2026-01-20T23:23:55.648+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'bias.V' (conv_core.cpp:530:1) to m_axi port 'W' since its offset mode is off." projectName="conv" solutionName="32X18X30_TO_32X18X30" date="2026-01-20T23:23:53.647+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'w.V' (conv_core.cpp:528:1) to m_axi port 'W' since its offset mode is off." projectName="conv" solutionName="32X18X30_TO_32X18X30" date="2026-01-20T23:23:53.636+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'in.V' (conv_core.cpp:527:1) to m_axi port 'IN' since its offset mode is off." projectName="conv" solutionName="32X18X30_TO_32X18X30" date="2026-01-20T23:23:53.625+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] conv_core.cpp:276: variable-indexed range selection may cause suboptimal QoR." projectName="conv" solutionName="32X18X30_TO_32X18X30" date="2026-01-20T23:23:39.014+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'conv36x60x16_36x60x16/OUT' to 'conv36x60x16_36x60x16/OUT_r' to avoid the conflict with HDL keywords or other object names." projectName="conv" solutionName="16X36X60_TO_16X36X60" date="2026-01-20T21:01:27.805+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'conv36x60x16_36x60x16/IN' to 'conv36x60x16_36x60x16/IN_r' to avoid the conflict with HDL keywords or other object names." projectName="conv" solutionName="16X36X60_TO_16X36X60" date="2026-01-20T21:01:27.793+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'store_output_tile_pack4' to 'store_output_tile_pa' (conv_core.cpp:50:24)" projectName="conv" solutionName="16X36X60_TO_16X36X60" date="2026-01-20T21:01:27.724+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'out.V' (conv_core.cpp:389:1) to m_axi port 'OUT' since its offset mode is off." projectName="conv" solutionName="16X36X60_TO_16X36X60" date="2026-01-20T21:01:23.134+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'bias.V' (conv_core.cpp:388:1) to m_axi port 'W' since its offset mode is off." projectName="conv" solutionName="16X36X60_TO_16X36X60" date="2026-01-20T21:01:21.108+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'w.V' (conv_core.cpp:386:1) to m_axi port 'W' since its offset mode is off." projectName="conv" solutionName="16X36X60_TO_16X36X60" date="2026-01-20T21:01:21.099+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'in.V' (conv_core.cpp:385:1) to m_axi port 'IN' since its offset mode is off." projectName="conv" solutionName="16X36X60_TO_16X36X60" date="2026-01-20T21:01:21.087+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] conv_core.cpp:242: variable-indexed range selection may cause suboptimal QoR." projectName="conv" solutionName="16X36X60_TO_16X36X60" date="2026-01-20T21:01:06.217+0800" type="Warning"/>
+        <logs message="WARNING: [RTMG 210-274] Memory 'conv3x3_g_36x60_ikbM' is read-only, switch it to a ROM." projectName="conv" solutionName="1X36X60_TO_16X36X60" date="2026-01-20T20:59:31.200+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'conv36x60x1_36x60x16/OUT' to 'conv36x60x1_36x60x16/OUT_r' to avoid the conflict with HDL keywords or other object names." projectName="conv" solutionName="1X36X60_TO_16X36X60" date="2026-01-20T20:58:53.299+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'conv36x60x1_36x60x16/IN' to 'conv36x60x1_36x60x16/IN_r' to avoid the conflict with HDL keywords or other object names." projectName="conv" solutionName="1X36X60_TO_16X36X60" date="2026-01-20T20:58:53.288+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'store_output_tile_pack4' to 'store_output_tile_pa' (conv_core.cpp:50:24)" projectName="conv" solutionName="1X36X60_TO_16X36X60" date="2026-01-20T20:58:53.208+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'out.V' (conv_core.cpp:412:1) to m_axi port 'OUT' since its offset mode is off." projectName="conv" solutionName="1X36X60_TO_16X36X60" date="2026-01-20T20:58:48.629+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'bias.V' (conv_core.cpp:411:1) to m_axi port 'W' since its offset mode is off." projectName="conv" solutionName="1X36X60_TO_16X36X60" date="2026-01-20T20:58:46.615+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'w.V' (conv_core.cpp:409:1) to m_axi port 'W' since its offset mode is off." projectName="conv" solutionName="1X36X60_TO_16X36X60" date="2026-01-20T20:58:46.604+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'in.V' (conv_core.cpp:408:1) to m_axi port 'IN' since its offset mode is off." projectName="conv" solutionName="1X36X60_TO_16X36X60" date="2026-01-20T20:58:46.592+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] conv_core.cpp:242: variable-indexed range selection may cause suboptimal QoR." projectName="conv" solutionName="1X36X60_TO_16X36X60" date="2026-01-20T20:58:31.641+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'conv36x60_case1/OUT' to 'conv36x60_case1/OUT_r' to avoid the conflict with HDL keywords or other object names." projectName="conv" solutionName="solution1" date="2026-01-19T15:05:28.324+0800" type="Warning"/>
+        <logs message="WARNING: [SYN 201-107] Renaming port name 'conv36x60_case1/IN' to 'conv36x60_case1/IN_r' to avoid the conflict with HDL keywords or other object names." projectName="conv" solutionName="solution1" date="2026-01-19T15:05:28.309+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'store_output_tile_pack4' to 'store_output_tile_pa' (conv_core.cpp:50:24)" projectName="conv" solutionName="solution1" date="2026-01-19T15:05:24.606+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'out.V' (conv_core.cpp:383:1) to m_axi port 'OUT' since its offset mode is off." projectName="conv" solutionName="solution1" date="2026-01-19T15:05:24.022+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'bias.V' (conv_core.cpp:382:1) to m_axi port 'W' since its offset mode is off." projectName="conv" solutionName="solution1" date="2026-01-19T15:05:22.084+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'w.V' (conv_core.cpp:380:1) to m_axi port 'W' since its offset mode is off." projectName="conv" solutionName="solution1" date="2026-01-19T15:05:22.073+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-803] Cannot bundle argument 'in.V' (conv_core.cpp:379:1) to m_axi port 'IN' since its offset mode is off." projectName="conv" solutionName="solution1" date="2026-01-19T15:05:22.061+0800" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] conv_core.cpp:236: variable-indexed range selection may cause suboptimal QoR." projectName="conv" solutionName="solution1" date="2026-01-19T15:05:08.481+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

@@ -1,0 +1,13 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../conv_core.cpp in debug mode
+   Generating csim.exe
+PASS: H=36 W=60 Cin=1 Cout=16 stride=1 pad=1 -> outH=36 outW=60 packed_words=8640
+PASS: H=36 W=60 Cin=16 Cout=32 stride=2 pad=1 -> outH=18 outW=30 packed_words=4320
+PASS: H=18 W=30 Cin=32 Cout=32 stride=2 pad=1 -> outH=9 outW=15 packed_words=1080
+PASS: H=36 W=60 Cin=3 Cout=32 stride=1 pad=1 -> outH=36 outW=60 packed_words=17280
+PASS: H=36 W=60 Cin=32 Cout=16 stride=1 pad=0 -> outH=34 outW=58 packed_words=7888
+PASS: H=9 W=15 Cin=32 Cout=32 stride=1 pad=1 -> outH=9 outW=15 packed_words=1080
+ALL TESTS PASS.
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

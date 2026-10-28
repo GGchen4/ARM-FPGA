@@ -1,0 +1,117 @@
+INFO: [HLS 200-10] Running 'C:/vivado2017/Vivado/2017.4/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user 'a1588' on host 'young' (Windows NT_amd64 version 6.2) on Fri Jan 16 11:32:11 +0800 2026
+INFO: [HLS 200-10] In directory 'E:/gaze_estim/HLS_2017/conv_acc'
+INFO: [HLS 200-10] Opening project 'E:/gaze_estim/HLS_2017/conv_acc/conv_acc'.
+INFO: [HLS 200-10] Adding design file 'conv_core.h' to the project
+INFO: [HLS 200-10] Adding design file 'conv_core.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'main.cpp' to the project
+INFO: [HLS 200-10] Opening solution 'E:/gaze_estim/HLS_2017/conv_acc/conv_acc/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z035ffg676-2'
+INFO: [HLS 200-10] Analyzing design file 'conv_core.cpp' ...
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 99.164 ; gain = 44.305
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 99.164 ; gain = 44.305
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 120.176 ; gain = 65.316
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 131.734 ; gain = 76.875
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'LOOP_jj' (conv_core.cpp:220) in function 'Conv' for pipelining.
+WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 384 for loop 'LOOP_load1' (conv_core.cpp:145:1) in function 'Conv'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 144 for loop 'LOOP_load2' (conv_core.cpp:160:1) in function 'Conv'.
+WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 240 for loop 'LOOP_load3' (conv_core.cpp:295:1) in function 'Conv'.
+INFO: [XFORM 203-501] Unrolling loop 'LOOP_rr' (conv_core.cpp:223) in function 'Conv' completely.
+INFO: [XFORM 203-501] Unrolling loop 'LOOP_cc' (conv_core.cpp:225) in function 'Conv' completely.
+INFO: [XFORM 203-501] Unrolling loop 'LOOP_Tm' (conv_core.cpp:228) in function 'Conv' completely.
+INFO: [XFORM 203-501] Unrolling loop 'LOOP_Tn' (conv_core.cpp:231) in function 'Conv' completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (conv_core.cpp:170:5) to (conv_core.cpp:198:20) in function 'Conv'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'Conv' (conv_core.cpp:114)...963 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:03 ; elapsed = 00:01:11 . Memory (MB): peak = 374.273 ; gain = 319.414
+INFO: [XFORM 203-541] Flattening a loop nest 'LOOP_ii' (conv_core.cpp:218:7) in function 'Conv'.
+INFO: [XFORM 203-541] Flattening a loop nest 'LOOP_cin' (conv_core.cpp:212:6) in function 'Conv'.
+WARNING: [XFORM 203-542] Cannot flatten a loop nest 'LOOP_cout' (conv_core.cpp:207:5) in function 'Conv' : 
+
+more than one sub loop.
+INFO: [XFORM 203-541] Flattening a loop nest 'LOOP_j' (conv_core.cpp:203:4) in function 'Conv'.
+INFO: [XFORM 203-541] Flattening a loop nest 'LOOP_i' (conv_core.cpp:199:3) in function 'Conv'.
+INFO: [XFORM 203-811] Inferring bus burst read of length 384 on port 'gmem' (conv_core.cpp:147:2).
+INFO: [XFORM 203-811] Inferring bus burst read of length 144 on port 'gmem' (conv_core.cpp:162:2).
+INFO: [XFORM 203-811] Inferring bus burst write of length 240 on port 'gmem' (conv_core.cpp:298:2).
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:10 ; elapsed = 00:01:20 . Memory (MB): peak = 374.273 ; gain = 319.414
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Conv' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Conv'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_load1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_load2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_cin_LOOP_ii_LOOP_jj'.
+WARNING: [SCHED 204-68] Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1)
+   between 'store' operation (conv_core.cpp:255) of variable 'p_Val2_3_0_0_0_3', conv_core.cpp:255 on array 'sum.V', conv_core.cpp:209 and 'load' operation ('sum_V_load', conv_core.cpp:255) on array 'sum.V', conv_core.cpp:209.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('W_V_load_22', conv_core.cpp:253) on array 'W.V', conv_core.cpp:153 due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'W_V'.
+WARNING: [SCHED 204-69] Unable to schedule 'store' operation (conv_core.cpp:255) of variable 'p_Val2_3_0_6_2_3', conv_core.cpp:255 on array 'sum.V', conv_core.cpp:209 due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'sum_V'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 240, Depth = 241.
+INFO: [SCHED 204-61] Pipelining loop 'LOOP_load3'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 176.051 seconds; current allocated memory: 161.843 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 4.059 seconds; current allocated memory: 178.743 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Conv'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv/CHin_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv/Hin_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv/Win_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv/CHout_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv/Kx_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv/Ky_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv/Sx_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv/Sy_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv/mode_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv/relu_en_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv/Feature_in_dache_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv/W_dache_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Conv/Feature_out_dache_V' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'Conv' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'Hin_V', 'Win_V', 'CHout_V', 'Kx_V', 'Ky_V', 'Sx_V', 'Sy_V', 'mode_V', 'relu_en_V', 'Feature_in_dache_V', 'W_dache_V' and 'Feature_out_dache_V' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'Conv_sdiv_19s_9ns_16_23_seq_1' to 'Conv_sdiv_19s_9nsbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv_mul_mul_8ns_10ns_18_1_1' to 'Conv_mul_mul_8ns_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv_mul_mul_19ns_17ns_36_1_1' to 'Conv_mul_mul_19nsdEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv_mul_mul_8ns_11ns_19_1_1' to 'Conv_mul_mul_8ns_eOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv_mul_mul_17ns_15ns_47_1_1' to 'Conv_mul_mul_17nsfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv_mul_mul_16s_8ns_16_1_1' to 'Conv_mul_mul_16s_g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv_mac_mul_sub_16s_8ns_8ns_16_1_1' to 'Conv_mac_mul_sub_hbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv_mac_muladd_8s_8s_20ns_20_1_1' to 'Conv_mac_muladd_8ibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv_mac_muladd_8s_8s_16s_17_1_1' to 'Conv_mac_muladd_8jbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Conv_mac_muladd_8s_8s_17s_17_1_1' to 'Conv_mac_muladd_8kbM' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'Conv_mac_mul_sub_hbi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv_mac_muladd_8ibs': 240 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv_mac_muladd_8jbC': 240 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv_mac_muladd_8kbM': 240 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv_mul_mul_16s_g8j': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv_mul_mul_17nsfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv_mul_mul_19nsdEe': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv_mul_mul_8ns_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv_mul_mul_8ns_eOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'Conv_sdiv_19s_9nsbkb': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv'.
+INFO: [HLS 200-111]  Elapsed time: 4.003 seconds; current allocated memory: 213.916 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'Conv_sdiv_19s_9nsbkb_div'
+INFO: [RTMG 210-278] Implementing memory 'Conv_feature_in_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'Conv_W_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'Conv_feature_out_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'Conv_sum_V_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:02:54 ; elapsed = 00:03:14 . Memory (MB): peak = 374.273 ; gain = 319.414
+INFO: [SYSC 207-301] Generating SystemC RTL for Conv.
+INFO: [VHDL 208-304] Generating VHDL RTL for Conv.
+INFO: [VLOG 209-307] Generating Verilog RTL for Conv.
+INFO: [HLS 200-112] Total elapsed time: 194.334 seconds; peak allocated memory: 213.916 MB.
